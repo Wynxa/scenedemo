@@ -1,0 +1,256 @@
+/* ══════════════════════════════════════════════════════════════════════
+   Design Token System — Industrial Construction Safety Platform
+   ══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Palette ── */
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-slate-700: #334155;
+  --color-slate-600: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+  --color-slate-200: #e2e8f0;
+  --color-slate-100: #f1f5f9;
+  --color-slate-50:  #f8fafc;
+
+  --color-orange-600: #ea580c;
+  --color-orange-500: #f97316;
+  --color-orange-400: #fb923c;
+  --color-orange-100: #ffedd5;
+  --color-orange-50:  #fff7ed;
+
+  --color-blue-600: #2563eb;
+  --color-blue-500: #3b82f6;
+  --color-blue-100: #dbeafe;
+
+  --color-green-600: #16a34a;
+  --color-green-500: #22c55e;
+  --color-green-100: #dcfce7;
+
+  --color-red-600: #dc2626;
+  --color-red-500: #ef4444;
+  --color-red-100: #fee2e2;
+
+  --color-amber-500: #f59e0b;
+  --color-amber-100: #fef3c7;
+
+  --color-purple-400: #a78bfa;
+  --color-cyan-400: #06b6d4;
+
+  /* ── Semantic Colors ── */
+  --color-primary: var(--color-orange-500);
+  --color-primary-hover: var(--color-orange-600);
+  --color-primary-light: var(--color-orange-100);
+  --color-primary-bg: var(--color-orange-50);
+
+  --color-sidebar: var(--color-slate-900);
+  --color-sidebar-hover: var(--color-slate-800);
+  --color-sidebar-active: rgba(249, 115, 22, 0.15);
+  --color-sidebar-text: var(--color-slate-400);
+  --color-sidebar-text-active: #fff;
+
+  --color-bg: var(--color-slate-100);
+  --color-surface: #fff;
+  --color-surface-hover: var(--color-slate-50);
+  --color-border: var(--color-slate-200);
+  --color-border-light: var(--color-slate-100);
+
+  --color-text-primary: var(--color-slate-800);
+  --color-text-secondary: var(--color-slate-600);
+  --color-text-tertiary: var(--color-slate-400);
+  --color-text-inverse: #fff;
+
+  --color-success: var(--color-green-500);
+  --color-warning: var(--color-amber-500);
+  --color-danger: var(--color-red-500);
+  --color-info: var(--color-blue-500);
+
+  /* ── Typography ── */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.8125rem; /* 13px */
+  --text-base: 0.875rem;  /* 14px */
+  --text-lg:   1rem;      /* 16px */
+  --text-xl:   1.125rem;  /* 18px */
+  --text-2xl:  1.25rem;   /* 20px */
+  --text-3xl:  1.5rem;    /* 24px */
+  --text-4xl:  1.875rem;  /* 30px */
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  /* ── Spacing ── */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px  */
+  --space-2: 0.5rem;    /* 8px  */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+
+  /* ── Borders ── */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* ── Layout ── */
+  --header-height: 56px;
+  --sidebar-width: 232px;
+  --sidebar-collapsed: 64px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Global Reset & Base
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Element Plus Overrides
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* Reduce default card padding */
+.el-card { --el-card-padding: 18px; }
+.el-card__header {
+  padding: 14px 18px;
+  border-bottom-color: var(--color-border-light);
+  font-size: var(--text-base);
+}
+.el-card__body { padding: 18px; }
+
+/* Tighter table */
+.el-table {
+  --el-table-header-bg-color: var(--color-slate-50);
+  --el-table-row-hover-bg-color: #fafbfc;
+  font-size: var(--text-sm);
+}
+.el-table th.el-table__cell {
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Buttons */
+.el-button--primary {
+  --el-button-bg-color: var(--color-orange-500);
+  --el-button-border-color: var(--color-orange-500);
+  --el-button-hover-bg-color: var(--color-orange-600);
+  --el-button-hover-border-color: var(--color-orange-600);
+}
+
+/* Tags */
+.el-tag {
+  font-weight: var(--font-medium);
+  letter-spacing: 0.2px;
+}
+
+/* Menu */
+.el-menu {
+  border-right: none !important;
+}
+
+/* Dialog */
+.el-dialog__header {
+  padding: 20px 24px 14px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.el-dialog__body { padding: 20px 24px; }
+.el-dialog__footer { padding: 14px 24px 20px; }
+
+/* Form */
+.el-form-item__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   Utility Classes
+   ══════════════════════════════════════════════════════════════════════ */
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  background: var(--color-slate-100);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--color-slate-700);
+}
+
+.card-title {
+  font-weight: var(--font-semibold);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+}
+
+.card-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 60px 0;
+  color: var(--color-slate-400);
+  font-size: var(--text-sm);
+}

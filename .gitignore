@@ -1,0 +1,95 @@
+# ============================================================
+# Dependencies
+# ============================================================
+frontend/node_modules/
+frontend/dist/
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.uv/
+
+# ============================================================
+# Model Weights & Checkpoints (.pt, .pth, .h5, .bin, .safetensors)
+# ============================================================
+*.pt
+*.pth
+*.h5
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+backend/checkpoints/
+weight/
+
+# HuggingFace model weights (keep configs: vocab.txt, config.json, tokenizer.json)
+backend/resources/hf_models/**/*.bin
+backend/resources/hf_models/**/*.safetensors
+backend/resources/hf_models/**/*.h5
+backend/resources/hf_models/**/*.msgpack
+backend/resources/hf_models/**/*.ot
+
+# Scene graph pretrained embeddings
+backend/resources/scene_graph/glove.6B.300d.pt
+backend/resources/scene_graph/model_0006000.pth
+backend/resources/scene_graph/VG-SGG-with-attri.h5
+
+# Hazard reasoning model
+backend/resources/hazard_reasoning/best_model.pt
+
+# ============================================================
+# Uploaded Data & Runtime Files
+# ============================================================
+backend/uploads/
+backend/instance/dev.db
+backend/instance/algorithm_runtime.json
+backend/instance/*.tmp.json
+backend/tmp/
+backend/logs/
+frontend/logs/
+
+# ============================================================
+# IDE & OS
+# ============================================================
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ============================================================
+# Runtime Cache Files
+# ============================================================
+.matplotlib/
+.ultralytics/
+.fontlist*.json
+runtime_config.json
+
+# ============================================================
+# Environment & Secrets
+# ============================================================
+.env
+.env.local
+.env.*.local
+*.log
+
+# ============================================================
+# Claude Code Internal
+# ============================================================
+.claude/
+.agents/
+
+# ============================================================
+# Misc
+# ============================================================
+skills-lock.json

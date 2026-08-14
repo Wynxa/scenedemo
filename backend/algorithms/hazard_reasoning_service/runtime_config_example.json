@@ -1,0 +1,20 @@
+{
+  "paths": {
+    "checkpoint": "E:/MasterDegree/Experiment/HTCL/projects/hazard_reasoning/results/exp2/best_model.pt",
+    "prototype_inventory": "E:/MasterDegree/Experiment/HTCL/projects/hazard_reasoning/config/rule_prototypes_v1.json",
+    "context_policy": "E:/MasterDegree/Experiment/HTCL/projects/hazard_reasoning/config/hazard_context_policies_v4.json",
+    "model_cache_dir": "E:/MasterDegree/Experiment/HTCL/projects/hazard_reasoning/outputs/hf_models_cache"
+  },
+  "model": {
+    "pretrained_model": "bert-base-uncased",
+    "local_files_only": true,
+    "max_length": 96,
+    "projection_hidden_dim": 512,
+    "projection_dim": 256,
+    "dropout": 0.1,
+    "share_backbone": true,
+    "scene_text_field": "scene_text_structured",
+    "topk": 3
+  },
+  "device": "cpu"
+}

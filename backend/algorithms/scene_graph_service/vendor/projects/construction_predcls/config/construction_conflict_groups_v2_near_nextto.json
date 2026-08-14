@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "version": "construction_v2_near_nextto",
+    "num_groups": 1,
+    "max_group_size": 2,
+    "note": "Conservative conflict-group draft for the 7-predicate construction predcls task. This version only targets the strongest observed semantic overlap pair in current evaluation: near vs next_to."
+  },
+  "conflict_groups": [
+    {
+      "group_id": 0,
+      "group_name": "proximity_pair",
+      "group_head_id": 2,
+      "group_head_name": "near",
+      "member_ids": [2, 3],
+      "member_names": ["near", "next_to"],
+      "rationale": "The current predcls evaluation shows that near remains the weakest predicate while next_to is much stronger, indicating asymmetric confusion inside a shared proximity semantics space. Restricting conflict reentry to this pair gives a focused way to test whether recall can be shifted from the easier geometric label next_to toward the broader and harder label near without disturbing already-saturated predicates."
+    }
+  ]
+}

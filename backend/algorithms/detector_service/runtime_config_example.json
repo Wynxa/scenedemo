@@ -1,0 +1,22 @@
+{
+  "device": "cpu",
+  "iou_nms": 0.5,
+  "models": {
+    "stw_ppe": {
+      "name": "stw_ppe",
+      "repo_root": "E:/MasterDegree/Experiment/STW-YOLO",
+      "weight_path": "E:/MasterDegree/scenedemo/weight/stw/best.pt",
+      "conf": 0.25,
+      "imgsz": 1280,
+      "target_labels": ["helmet", "gloves", "vest"]
+    },
+    "yolo_general": {
+      "name": "yolo_general",
+      "repo_root": "",
+      "weight_path": "E:/MasterDegree/scenedemo/weight/yolo/best.pt",
+      "conf": 0.25,
+      "imgsz": 1280,
+      "target_labels": ["worker", "excavator", "scaffold", "rebar_zone"]
+    }
+  }
+}

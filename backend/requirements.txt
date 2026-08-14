@@ -1,0 +1,41 @@
+﻿# Flask Core
+Flask>=3.0
+Flask-CORS>=5.0
+Flask-SQLAlchemy>=3.1
+Flask-Migrate>=4.0
+Flask-SocketIO>=5.5
+
+# JWT (direct PyJWT, no flask_jwt_extended)
+PyJWT>=2.8,<2.10
+
+# Database
+PyMySQL>=1.1
+cryptography>=41.0
+
+# Async
+celery>=5.4
+redis>=5.0
+
+# File handling
+Pillow>=11.0
+python-multipart>=0.0.18
+
+# Report generation
+openpyxl>=3.1
+reportlab>=4.2
+
+# Algorithm runtime deps
+torch>=2.4.0
+torchvision>=0.19.0
+numpy>=1.24.0
+pandas>=2.0.0
+pyyaml>=6.0
+ultralytics
+transformers>=5.0.0
+safetensors
+h5py
+scipy
+yacs
+einops
+timm
+opencv-python

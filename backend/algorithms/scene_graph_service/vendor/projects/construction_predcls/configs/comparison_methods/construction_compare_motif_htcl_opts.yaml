@@ -1,0 +1,78 @@
+PATHS_CATALOG: "projects/construction_predcls/config/construction_paths_catalog.py"
+GLOVE_DIR: "/root/autodl-tmp/data/vg"
+
+MODEL:
+  ROI_RELATION_HEAD:
+    USE_GT_BOX: True
+    USE_GT_OBJECT_LABEL: True
+    Middle_FEATS_DIM: 4096
+    LAST_FEATS_DIM: 4096
+    PREDICTOR: MotifPredictor_HTCL
+    PREDICT_USE_BIAS: False
+    BATCH_SIZE_PER_IMAGE: 512
+  PRETRAINED_DETECTOR_CKPT: "/root/autodl-tmp/pre/pretrained_faster_rcnn/model_0014000.pth"
+
+  num_center_head_cls: 3
+  num_beta: 0.9999
+  cut_rels: 200
+  PENET_wt: False
+  reweight_fineloss: True
+  ft_with_dist0: True
+  semantic_embed_dim: 300
+  ct_loss: True
+  w_ct: 0.0001
+  refine_mask_rate: 0.1
+  refine_layers: 4
+  Classifier_Finetuning: True
+  Feats_resampling: True
+  Rels_each_class: 2000
+  max_bg_feats: 2000000
+
+  BG_GATE:
+    ENABLED: False
+    HIDDEN_DIM: 64
+    LOSS_WEIGHT: 0.1
+    INFER_THRES: 0.5
+    MARGIN: 0.0
+    DETACH_COARSE: True
+    APPLY_TO_HTCL_ONLY: True
+
+  CONFLICT_REENTRY:
+    ENABLED: False
+    GROUPS_JSON: ""
+
+TEST:
+  IMS_PER_BATCH: 1
+  ALLOW_LOAD_FROM_CACHE: False
+  Save_eval_results: False
+  COCO_mAp: False
+  Eval_all_metrics: True
+  Val_mode: mRecall
+
+DTYPE: "float32"
+
+TENSORBOARD:
+  ENABLED: False
+  LOG_DIR: "/root/tf-logs"
+
+SOLVER:
+  PRE_VAL: True
+  Classifier_batch: 64
+  Classifier_max_iter: 10000
+  Classifier_checkpoint_period: 10000
+  BASE_LR_ft: 0.000001
+  cls_ft_STEPS: (7000,)
+
+  VAL_PERIOD: 20000
+  CHECKPOINT_PERIOD: 20000
+  BASE_LR: 0.001
+  GRAD_NORM_CLIP: 5.0
+  MAX_ITER: 20000
+  IMS_PER_BATCH: 8
+  STEPS: (12000, 16000)
+  SCHEDULE:
+    TYPE: WarmupMultiStepLR
+
+OUTPUT_DIR: "/root/autodl-tmp/construction_output/output/construction_predcls/comparison_methods/motif_htcl_stage1"
+CLASSIFIER_OUTPUT_DIR: "/root/autodl-tmp/construction_output/output/construction_predcls/comparison_methods/motif_htcl_stage2_classifier"
+OUTPUT_DIR_feats: "/root/autodl-tmp/construction_output/output/construction_predcls/comparison_methods/motif_htcl_stage1_feats"

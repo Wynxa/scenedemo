@@ -1,0 +1,41 @@
+PATHS_CATALOG: "projects/construction_predcls/config/construction_paths_catalog.py"
+GLOVE_DIR: "/root/autodl-tmp/data/vg"
+
+MODEL:
+  ROI_RELATION_HEAD:
+    USE_GT_BOX: True
+    USE_GT_OBJECT_LABEL: True
+    PREDICTOR: Zhang2022Predictor
+    FEATURE_EXTRACTOR: Zhang2022RelationFeatureExtractor
+    PREDICT_USE_VISION: True
+    PREDICT_USE_BIAS: True
+    BATCH_SIZE_PER_IMAGE: 512
+  PRETRAINED_DETECTOR_CKPT: "/root/autodl-tmp/pre/pretrained_faster_rcnn/model_0014000.pth"
+
+TEST:
+  IMS_PER_BATCH: 1
+  ALLOW_LOAD_FROM_CACHE: False
+  Save_eval_results: False
+  COCO_mAp: False
+  Eval_all_metrics: True
+  Val_mode: mRecall
+
+DTYPE: "float32"
+
+TENSORBOARD:
+  ENABLED: False
+  LOG_DIR: "/root/tf-logs"
+
+SOLVER:
+  PRE_VAL: True
+  VAL_PERIOD: 20000
+  CHECKPOINT_PERIOD: 20000
+  BASE_LR: 0.001
+  GRAD_NORM_CLIP: 5.0
+  MAX_ITER: 20000
+  IMS_PER_BATCH: 8
+  STEPS: (12000, 16000)
+  SCHEDULE:
+    TYPE: WarmupMultiStepLR
+
+OUTPUT_DIR: "/root/autodl-tmp/construction_output/output/construction_predcls/comparison_methods/zhang2022_stage1"

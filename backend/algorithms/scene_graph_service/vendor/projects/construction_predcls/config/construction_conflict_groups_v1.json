@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "version": "construction_v1",
+    "num_groups": 2,
+    "max_group_size": 3,
+    "note": "Draft conflict groups for the 7-predicate construction predcls task. Groups are intentionally conservative and only cover predicates with plausible semantic confusion under real construction scenes."
+  },
+  "conflict_groups": [
+    {
+      "group_id": 0,
+      "group_name": "proximity_collaboration",
+      "group_head_id": 2,
+      "group_head_name": "near",
+      "member_ids": [2, 3, 1],
+      "member_names": ["near", "next_to", "co_working_with"],
+      "rationale": "These predicates all describe close-range worker-worker or worker-object proximity. 'co_working_with' is usually a specialized human-human subset of spatial closeness, while 'next_to' is a stricter geometric version of 'near'."
+    },
+    {
+      "group_id": 1,
+      "group_name": "interaction_possession",
+      "group_head_id": 6,
+      "group_head_name": "using",
+      "member_ids": [6, 4, 7],
+      "member_names": ["using", "operating", "wearing"],
+      "rationale": "These predicates all encode subject-object functional interaction or possession. 'operating' is a stronger machine-oriented form of 'using', while 'wearing' is a body-attached possession relation that may still compete with generic interaction cues under noisy real-scene annotations."
+    }
+  ]
+}

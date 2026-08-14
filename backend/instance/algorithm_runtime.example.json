@@ -1,0 +1,74 @@
+﻿{
+  "detector": {
+    "runtime_config": {
+      "device": "cpu",
+      "iou_nms": 0.5,
+      "models": {
+        "stw_ppe": {
+          "name": "stw_ppe",
+          "repo_root": "__BACKEND_ROOT__/algorithms/detector_service/vendor/stw_yolo",
+          "weight_path": "__PROJECT_ROOT__/weight/stw/best.pt",
+          "conf": 0.25,
+          "imgsz": 1280,
+          "target_labels": ["helmet", "gloves", "vest"]
+        },
+        "yolo_general": {
+          "name": "yolo_general",
+          "repo_root": "",
+          "weight_path": "__PROJECT_ROOT__/weight/yolo/best.pt",
+          "conf": 0.25,
+          "imgsz": 1280,
+          "target_labels": ["worker", "excavator", "scaffold", "rebar_zone"]
+        }
+      }
+    }
+  },
+  "scene_graph": {
+    "runtime_config": {
+      "paths": {
+        "img_dir": "__BACKEND_ROOT__/uploads",
+        "roidb_file": "__BACKEND_ROOT__/resources/scene_graph/VG-SGG-with-attri.h5",
+        "dict_file": "__BACKEND_ROOT__/resources/scene_graph/VG-SGG-dicts-with-attri.json",
+        "image_file": "__BACKEND_ROOT__/resources/scene_graph/image_data.json",
+        "weight_file": "__BACKEND_ROOT__/resources/scene_graph/model_0006000.pth",
+        "config_file": "__BACKEND_ROOT__/algorithms/scene_graph_service/vendor/projects/construction_predcls/configs/construction_relation_base.yaml",
+        "opts_config_file": "__BACKEND_ROOT__/algorithms/scene_graph_service/vendor/projects/construction_predcls/configs/construction_htcl_predcls_opts.yaml",
+        "glove_dir": "__BACKEND_ROOT__/resources/scene_graph",
+        "conflict_groups_json": "__BACKEND_ROOT__/algorithms/scene_graph_service/vendor/projects/construction_predcls/config/construction_conflict_groups_v2_near_nextto.json"
+      },
+      "preprocess": {
+        "min_size": 600,
+        "max_size": 1000,
+        "pixel_mean": [102.9801, 115.9465, 122.7717],
+        "pixel_std": [1.0, 1.0, 1.0],
+        "to_bgr255": true
+      },
+      "device": "cpu",
+      "mode": "predcls",
+      "min_rel_score": 0.0,
+      "topk_relations": 0
+    }
+  },
+  "hazard_reasoning": {
+    "runtime_config": {
+      "paths": {
+        "checkpoint": "__BACKEND_ROOT__/resources/hazard_reasoning/best_model.pt",
+        "prototype_inventory": "__BACKEND_ROOT__/resources/hazard_reasoning/rule_prototypes_v1.json",
+        "context_policy": "__BACKEND_ROOT__/resources/hazard_reasoning/hazard_context_policies_v4.json",
+        "model_cache_dir": "__BACKEND_ROOT__/resources/hf_models/cache"
+      },
+      "model": {
+        "pretrained_model": "__BACKEND_ROOT__/resources/hf_models/bert-base-uncased",
+        "local_files_only": true,
+        "max_length": 96,
+        "projection_hidden_dim": 512,
+        "projection_dim": 256,
+        "dropout": 0.1,
+        "share_backbone": true,
+        "scene_text_field": "scene_text_structured",
+        "topk": 3
+      },
+      "device": "cpu"
+    }
+  }
+}

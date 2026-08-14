@@ -1,0 +1,24 @@
+{
+  "paths": {
+    "img_dir": "E:\\MasterDegree\\Experiment\\HTCL\\datasets\\construction_vg_raw_train_test_full_20260703\\vg\\VG_100K",
+    "roidb_file": "E:\\MasterDegree\\Experiment\\HTCL\\datasets\\construction_vg_raw_train_test_full_20260703\\vg\\VG-SGG-with-attri.h5",
+    "dict_file": "E:\\MasterDegree\\Experiment\\HTCL\\datasets\\construction_vg_raw_train_test_full_20260703\\vg\\VG-SGG-dicts-with-attri.json",
+    "image_file": "E:\\MasterDegree\\Experiment\\HTCL\\datasets\\construction_vg_raw_train_test_full_20260703\\vg\\image_data.json",
+    "weight_file": "E:\\MasterDegree\\Experiment\\HTCL\\results\\precls\\ours\\model_0006000.pth",
+    "config_file": "__SERVICE_ROOT__\\vendor\\projects\\construction_predcls\\configs\\construction_relation_base.yaml",
+    "opts_config_file": "__SERVICE_ROOT__\\vendor\\projects\\construction_predcls\\configs\\construction_htcl_predcls_opts.yaml",
+    "glove_dir": "E:\\MasterDegree\\Experiment\\HTCL\\datasets\\construction_vg_raw_train_test_full_20260703\\vg",
+    "conflict_groups_json": "__SERVICE_ROOT__\\vendor\\projects\\construction_predcls\\config\\construction_conflict_groups_v2_near_nextto.json"
+  },
+  "preprocess": {
+    "min_size": 600,
+    "max_size": 1000,
+    "pixel_mean": [102.9801, 115.9465, 122.7717],
+    "pixel_std": [1.0, 1.0, 1.0],
+    "to_bgr255": true
+  },
+  "device": "cpu",
+  "mode": "predcls",
+  "min_rel_score": 0.0,
+  "topk_relations": 0
+}
